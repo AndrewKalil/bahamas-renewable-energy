@@ -1,0 +1,283 @@
+/* ============================================================
+   Hero — full viewport height, flex column
+   ============================================================ */
+.root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+  background: linear-gradient(180deg, #ffffff 0%, var(--paper) 100%);
+  overflow: hidden;
+}
+
+/* Flex-grow region: centers the grid vertically */
+.content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding-top: 5rem; /* clear the fixed island nav */
+  padding-bottom: 1.5rem;
+}
+
+.grid {
+  max-width: var(--max-w);
+  @apply mx-auto px-7;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: stretch;
+}
+
+/* ---- Brand lockup ---- */
+.brand {
+  @apply flex items-center mb-3;
+}
+
+.logoWrapper {
+  width: 400px;
+  height: 158px;
+  overflow: hidden;
+}
+
+.logoTitle {
+  width: 450px;
+  height: auto;
+  margin-left: -50px;
+  margin-top: -45px;
+  display: block;
+}
+
+/* ---- Kicker / eyebrow ---- */
+.kicker {
+  font-family: var(--font-mono);
+  @apply text-xs tracking-widest uppercase flex items-center gap-3 mb-3;
+  color: var(--green-dark);
+
+  &::before {
+    content: "";
+    @apply block flex-none w-8 h-0.5;
+    background: var(--gold);
+  }
+}
+
+/* ---- Headline ---- */
+.headline {
+  margin-bottom: 0;
+  font-size: clamp(1.7rem, 3.6vw, 2.6rem);
+
+  .accent {
+    color: var(--green);
+  }
+}
+
+/* ---- Body copy ---- */
+.sub {
+  @apply mt-3 mb-5 text-base max-w-xl;
+  color: var(--ink-soft);
+  font-family: var(--font-body);
+}
+
+.ctas {
+  @apply flex gap-3 flex-wrap;
+}
+
+.btnPrimary {
+  @apply font-semibold text-sm px-6 py-3 cursor-pointer border-none;
+  background: var(--green);
+  color: #fff;
+  border-radius: var(--radius);
+  font-family: var(--font-head);
+  transition: background 0.18s ease;
+
+  &:hover {
+    background: var(--green-dark);
+  }
+}
+
+.btnGhost {
+  @apply font-semibold text-sm px-6 py-3 cursor-pointer;
+  border: 1.5px solid var(--navy);
+  color: var(--navy);
+  background: transparent;
+  border-radius: var(--radius);
+  font-family: var(--font-head);
+  transition: all 0.18s ease;
+
+  &:hover {
+    background: var(--navy);
+    color: #fff;
+  }
+}
+
+.note {
+  @apply mt-3 text-sm;
+  color: var(--ink-soft);
+
+  strong {
+    color: var(--green-dark);
+  }
+}
+
+/* ---- Photo ---- */
+.photoFrame {
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--navy-deep);
+  position: relative;
+
+  &::after {
+    content: attr(data-caption);
+    @apply absolute left-0 right-0 bottom-0 px-4 py-2.5;
+    font-family: var(--font-mono);
+    @apply text-xs tracking-wider;
+    color: #fff;
+    background: linear-gradient(transparent, rgba(15, 36, 68, 0.85));
+  }
+}
+
+.photo {
+  height: 100%;
+  min-height: 280px;
+  background: url("/solar-panels-in-yard.png") center / cover no-repeat;
+}
+
+/* ---- Stat band — pinned at bottom of flex container ---- */
+.statBand {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--white);
+}
+
+.stats {
+  max-width: var(--max-w);
+  @apply mx-auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.stat {
+  @apply py-5 px-6;
+  border-left: 1px solid var(--line);
+
+  &:first-child {
+    border-left: none;
+  }
+}
+
+.statNum {
+  font-family: var(--font-head);
+  @apply font-bold text-3xl;
+  color: var(--navy);
+
+  sup {
+    @apply text-sm;
+    color: var(--green-dark);
+  }
+}
+
+.statLbl {
+  @apply text-xs mt-0.5;
+  color: var(--ink-soft);
+}
+
+/* ============================================================
+   Mobile — navy pattern as full background, glass text panel
+   ============================================================ */
+@media (max-width: 960px) {
+  .root {
+    /* Solar panel photo with navy overlay — same image as desktop photo column */
+    background:
+      linear-gradient(rgba(15, 36, 68, 0.62), rgba(15, 36, 68, 0.75)),
+      url("/solar-panels-in-yard.png") center / cover no-repeat;
+  }
+
+  .content {
+    align-items: flex-start;
+    padding-top: 5.5rem;
+    padding-bottom: 1rem;
+    @apply px-4;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+    @apply px-0;
+  }
+
+  /* Scale logo down to fit inside the glass card (desktop uses 400px fixed width) */
+  .logoWrapper {
+    width: 100%;
+    max-width: 280px;
+    height: 110px;
+  }
+
+  .logoTitle {
+    width: 315px;
+    margin-left: -35px;
+    margin-top: -32px;
+  }
+
+  /* Frosted glass panel over the photo background */
+  .textCol {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: var(--radius);
+    @apply px-5 py-6;
+  }
+
+  /* Hide the photo column — the background replaces it */
+  .photoFrame {
+    display: none;
+  }
+
+  /* Stat band gets a lighter glass effect */
+  .statBand {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: none;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat:nth-child(3) {
+    border-left: none;
+  }
+
+  .stat {
+    @apply py-4 px-4;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    @apply px-3;
+  }
+
+  .textCol {
+    @apply px-4 py-5;
+  }
+
+  /* Further scale logo for small phones */
+  .logoWrapper {
+    max-width: 240px;
+    height: 94px;
+  }
+
+  .logoTitle {
+    width: 270px;
+    margin-left: -30px;
+    margin-top: -27px;
+  }
+
+  .sub {
+    @apply text-sm;
+  }
+
+  .ctas {
+    @apply flex-col;
+  }
+}

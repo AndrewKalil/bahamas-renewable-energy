@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================================
+   BAHAMAS RENEWABLE ENERGY — BRAND TOKENS
+   Colors sampled from company logo & business card
+   ========================================================= */
+:root {
+  /* Brand palette */
+  --navy: #17325b;
+  --navy-deep: #0f2444;
+  --green: #5e9c34;
+  --green-dark: #47792a;
+  --gold: #efb63a;
+  --teal: #3d93bc;
+  --paper: #faf9f5;
+  --white: #ffffff;
+  --ink: #212b38;
+  --ink-soft: #55617a;
+  --line: #e2e0d8;
+  --line-dark: #c9c6ba;
+
+  /* Typography */
+  --font-head: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Source Sans 3", "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", "Consolas", monospace;
+
+  /* Layout */
+  --max-w: 1160px;
+  --radius: 6px;
+
+  /* =========================================================
+     IslandNav theming — HSL triplets (no "hsl()" wrapper)
+     Navy frosted pill, green active indicator
+     ========================================================= */
+  --background: 216 56% 9%;        /* #0f2444 navy-deep */
+  --border: 215 30% 25%;           /* muted navy border */
+  --primary: 96 47% 41%;           /* #5e9c34 green */
+  --primary-foreground: 0 0% 100%; /* white text on active */
+  --foreground: 0 0% 95%;          /* near-white for hover */
+  --muted-foreground: 215 20% 65%; /* soft blue-grey inactive */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--paper);
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--teal);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-head);
+  color: var(--navy);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: clamp(2.1rem, 4.6vw, 3.4rem);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}

@@ -1,0 +1,77 @@
+.root {
+  @apply py-20;
+  background: var(--white);
+  border-top: 1px solid var(--line);
+}
+
+.wrap {
+  max-width: var(--max-w);
+  @apply mx-auto px-7;
+}
+
+.kicker {
+  font-family: var(--font-mono);
+  @apply text-xs tracking-widest uppercase flex items-center gap-3 mb-4;
+  color: var(--green-dark);
+
+  &::before {
+    content: "";
+    @apply block w-8 h-0.5;
+    background: var(--gold);
+  }
+}
+
+.sectionHead {
+  @apply max-w-xl mb-12;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.photoFrame {
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--navy-deep);
+  position: relative;
+
+  &::after {
+    content: attr(data-caption);
+    @apply absolute left-0 right-0 bottom-0 px-4 py-2.5;
+    font-family: var(--font-mono);
+    @apply text-xs tracking-wider;
+    color: #fff;
+    background: linear-gradient(transparent, rgba(15, 36, 68, 0.85));
+  }
+}
+
+.photo {
+  aspect-ratio: 4/3;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photoPlaceholder {
+  aspect-ratio: 4/3;
+  @apply flex items-center justify-center text-center p-5 text-xs;
+  color: #8fa5c4;
+  font-family: var(--font-mono);
+  background: repeating-linear-gradient(45deg, #16304f 0 14px, #152c49 14px 28px);
+}
+
+@media (max-width: 960px) {
+  .root {
+    @apply py-12;
+  }
+
+  .wrap {
+    @apply px-4;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}

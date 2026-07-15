@@ -1,0 +1,103 @@
+.root {
+  @apply py-20;
+  background: var(--navy-deep);
+  color: #d8e1ef;
+}
+
+.wrap {
+  max-width: var(--max-w);
+  @apply mx-auto px-7;
+}
+
+.kicker {
+  font-family: var(--font-mono);
+  @apply text-xs tracking-widest uppercase flex items-center gap-3 mb-4;
+  color: var(--gold);
+
+  &::before {
+    content: "";
+    @apply block w-8 h-0.5;
+    background: var(--gold);
+  }
+}
+
+.sectionHead {
+  @apply max-w-xl mb-10;
+
+  h2 {
+    color: #fff;
+  }
+
+  p {
+    @apply mt-3 text-base;
+    color: #9fb2cc;
+  }
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th,
+  td {
+    @apply px-4 py-4 text-left text-sm;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  thead th {
+    font-family: var(--font-mono);
+    @apply text-xs tracking-wider uppercase;
+    color: var(--gold);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+}
+
+.profile {
+  b {
+    @apply font-semibold;
+    color: #fff;
+  }
+
+  span {
+    @apply block text-sm;
+    color: #9fb2cc;
+  }
+}
+
+.runtime {
+  font-family: var(--font-mono);
+  color: #8fd46a;
+  @apply whitespace-nowrap;
+
+  &.warn {
+    color: #f0a860;
+  }
+}
+
+.tableWrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.foot {
+  @apply mt-5 text-sm;
+  color: #9fb2cc;
+}
+
+@media (max-width: 960px) {
+  .root {
+    @apply py-12;
+  }
+
+  .wrap {
+    @apply px-4;
+  }
+
+  .table {
+    th,
+    td {
+      @apply px-3 py-3;
+      white-space: nowrap;
+    }
+  }
+}

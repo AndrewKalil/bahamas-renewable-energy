@@ -1,0 +1,141 @@
+.root {
+  @apply py-20;
+  background: var(--navy);
+  color: #fff;
+}
+
+.grid {
+  max-width: var(--max-w);
+  @apply mx-auto px-7;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.kicker {
+  font-family: var(--font-mono);
+  @apply text-xs tracking-widest uppercase flex items-center gap-3 mb-4;
+  color: var(--gold);
+
+  &::before {
+    content: "";
+    @apply block w-8 h-0.5;
+    background: var(--gold);
+  }
+}
+
+.info {
+  h2 {
+    color: #fff;
+    @apply mb-4;
+  }
+
+  .sub {
+    @apply mb-6 text-lg max-w-md;
+    color: #bfcbe0;
+  }
+}
+
+.contactItem {
+  @apply flex gap-3.5 py-3 text-sm items-baseline;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+  .label {
+    font-family: var(--font-mono);
+    @apply text-xs tracking-wider uppercase w-20 flex-none;
+    color: var(--gold);
+  }
+
+  a {
+    color: #fff;
+  }
+
+  span {
+    color: #fff;
+  }
+}
+
+/* Form card */
+.formCard {
+  @apply p-9;
+  background: var(--white);
+  border-radius: var(--radius);
+  color: var(--ink);
+
+  h3 {
+    @apply mb-1.5;
+  }
+
+  .formHint {
+    @apply text-sm mb-5;
+    color: var(--ink-soft);
+  }
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  @apply mb-3.5;
+
+  &.full {
+    grid-template-columns: 1fr;
+  }
+}
+
+.submitBtn {
+  @apply w-full mt-2 font-semibold cursor-pointer border-none text-base py-3;
+  background: var(--gold);
+  color: var(--navy-deep);
+  border-radius: var(--radius);
+  font-family: var(--font-head);
+  transition: filter 0.18s ease;
+
+  &:hover:not(:disabled) {
+    filter: brightness(0.94);
+  }
+
+  &:disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+}
+
+/* Textarea override — shared-components Input.TextArea */
+.textarea {
+  resize: vertical;
+  min-height: 88px;
+}
+
+/* Honeypot — visually hidden but in the DOM so bots can find and fill it.
+   Do NOT use display:none or visibility:hidden — sophisticated bots ignore those. */
+.honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 960px) {
+  .root {
+    @apply py-12;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    @apply px-4;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+
+  .formCard {
+    @apply p-6;
+  }
+}

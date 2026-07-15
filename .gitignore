@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment — NEVER commit; real values live in Vercel env vars
+.env
+.env.*
+!.env.example
+
+# TypeScript build info
+*.tsbuildinfo
+node_modules/.tmp/
+
+# Editor / OS / dev tools
+.vscode/
+.idea/
+.claude/
+*.DS_Store
+Thumbs.db
+desktop.ini
+
+# Vercel local dev
+.vercel/

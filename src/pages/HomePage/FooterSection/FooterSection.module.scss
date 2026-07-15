@@ -1,0 +1,37 @@
+.root {
+  @apply py-10;
+  background: var(--navy-deep);
+  color: #8fa0bc;
+  font-size: 0.88rem;
+}
+
+.inner {
+  max-width: var(--max-w);
+  @apply mx-auto px-7 flex justify-between items-center gap-6 flex-wrap;
+}
+
+.company {
+  font-family: var(--font-head);
+  @apply font-bold;
+  color: #fff;
+}
+
+.address {
+  @apply mt-1;
+}
+
+.tagline {
+  font-family: var(--font-mono);
+  @apply text-xs tracking-widest uppercase;
+  color: var(--gold);
+}
+
+@media (max-width: 640px) {
+  .inner {
+    @apply flex-col items-start gap-4 px-4;
+  }
+
+  .tagline {
+    @apply hidden;
+  }
+}
