@@ -66,11 +66,11 @@ export async function handleContactRequest(
     return { status: 200, json: { success: true } };
   }
 
-  if (!validation.ok) {
+  if ("error" in validation) {
     return { status: 400, json: { error: validation.error } };
   }
 
-  const {data} = validation;
+  const { data } = validation;
 
   // 5. Send email via Resend
   const resend = new Resend(env.RESEND_API_KEY);
