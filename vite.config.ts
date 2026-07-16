@@ -46,6 +46,7 @@ function contactDevPlugin(env: Record<string, string>) {
           env: {
             RESEND_API_KEY: env.RESEND_API_KEY,
             RESEND_TO_EMAIL: env.RESEND_TO_EMAIL,
+            RESEND_FROM_EMAIL: env.RESEND_FROM_EMAIL,
           },
         });
 
