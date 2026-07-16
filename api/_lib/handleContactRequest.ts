@@ -1,8 +1,8 @@
 import { Resend } from "resend";
 
-import { MIN_SUBMIT_MS } from "./contact.constants";
-import { checkRateLimit } from "./rateLimit";
-import { validateContact } from "./validateContact";
+import { MIN_SUBMIT_MS } from "./contact.constants.js";
+import { checkRateLimit } from "./rateLimit.js";
+import { validateContact } from "./validateContact.js";
 
 export interface ContactRequestContext {
   /** Already-parsed request body (or undefined/null if parsing failed). */

@@ -1,4 +1,4 @@
-import { RATE_LIMIT_MAX, RATE_LIMIT_WINDOW_MS } from "./contact.constants";
+import { RATE_LIMIT_MAX, RATE_LIMIT_WINDOW_MS } from "./contact.constants.js";
 
 // NOTE: In-memory, best-effort rate limiter.
 // Resets on cold start; not shared across Vercel function instances.

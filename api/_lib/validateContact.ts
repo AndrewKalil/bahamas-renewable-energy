@@ -6,7 +6,7 @@ import {
   MESSAGE_MAX,
   PACKAGE_MAX,
   PHONE_MAX,
-} from "./contact.constants";
+} from "./contact.constants.js";
 
 export interface ValidContactData {
   fullName: string;

@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 
-import { handleContactRequest } from "./_lib/handleContactRequest";
+import { handleContactRequest } from "./_lib/handleContactRequest.js";
 
 // eslint-disable-next-line import/no-default-export
 export default async function handler(req: VercelRequest, res: VercelResponse) {

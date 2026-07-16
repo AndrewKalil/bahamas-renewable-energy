@@ -3,7 +3,7 @@ import path from "path";
 import { defineConfig, loadEnv } from "vite";
 import type { IncomingMessage, ServerResponse } from "http";
 
-import { handleContactRequest } from "./api/_lib/handleContactRequest";
+import { handleContactRequest } from "./api/_lib/handleContactRequest.js";
 
 function contactDevPlugin(env: Record<string, string>) {
   return {
