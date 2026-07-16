@@ -101,14 +101,14 @@
   }
 }
 
-/* Textarea override — shared-components Input.TextArea */
+/* Textarea override - shared-components Input.TextArea */
 .textarea {
   resize: vertical;
   min-height: 88px;
 }
 
-/* Honeypot — visually hidden but in the DOM so bots can find and fill it.
-   Do NOT use display:none or visibility:hidden — sophisticated bots ignore those. */
+/* Honeypot - visually hidden but in the DOM so bots can find and fill it.
+   Do NOT use display:none or visibility:hidden - sophisticated bots ignore those. */
 .honeypot {
   position: absolute;
   width: 1px;

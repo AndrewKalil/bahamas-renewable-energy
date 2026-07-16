@@ -5,7 +5,7 @@ export interface ContactPayload {
   island: string;
   package: string;
   message: string;
-  /** Honeypot — hidden from users; should always be empty for real submissions. */
+  /** Honeypot - hidden from users; should always be empty for real submissions. */
   company: string;
   /** Milliseconds elapsed since the form was rendered; used for bot-timing detection. */
   elapsedMs: number;

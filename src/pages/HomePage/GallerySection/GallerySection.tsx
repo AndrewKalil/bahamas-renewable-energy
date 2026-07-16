@@ -11,11 +11,11 @@ export const GallerySection = () => (
       <div className={styles.gallery}>
         <div
           className={styles.photoFrame}
-          data-caption="16-panel ground-mount array — Freeport, Grand Bahama"
+          data-caption="16-panel ground-mount array, Freeport, Grand Bahama"
         >
           <img
             src="/solar-panels-in-yard.png"
-            alt="16-panel ground-mount solar array — Freeport, Grand Bahama"
+            alt="16-panel ground-mount solar array, Freeport, Grand Bahama"
             className={styles.photo}
           />
         </div>

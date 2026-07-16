@@ -13,6 +13,7 @@ export interface ContactRequestContext {
   env: {
     RESEND_API_KEY: string | undefined;
     RESEND_TO_EMAIL: string | undefined;
+    RESEND_FROM_EMAIL: string | undefined;
   };
 }
 
@@ -73,25 +74,32 @@ export async function handleContactRequest(
 
   // 5. Send email via Resend
   const resend = new Resend(env.RESEND_API_KEY);
-  const { error } = await resend.emails.send({
-    from: "Bahamas RES Contact <onboarding@resend.dev>",
-    to: env.RESEND_TO_EMAIL,
-    replyTo: data.email,
-    subject: `Quote request from ${data.fullName}`,
-    text: [
-      `Name:    ${data.fullName}`,
-      `Phone:   ${data.phone}`,
-      `Email:   ${data.email}`,
-      `Island:  ${data.island}`,
-      `Package: ${data.package || "—"}`,
-      ``,
-      `Message:`,
-      data.message || "—",
-    ].join("\n"),
-  });
 
-  if (error) {
-    console.error("[contact] Resend error:", JSON.stringify(error));
+  let sendError: unknown;
+  try {
+    const { error } = await resend.emails.send({
+      from: env.RESEND_FROM_EMAIL ?? "onboarding@resend.dev",
+      to: env.RESEND_TO_EMAIL,
+      replyTo: data.email,
+      subject: `Quote request from ${data.fullName}`,
+      text: [
+        `Name:    ${data.fullName}`,
+        `Phone:   ${data.phone}`,
+        `Email:   ${data.email}`,
+        `Island:  ${data.island}`,
+        `Package: ${data.package || "(not selected)"}`,
+        ``,
+        `Message:`,
+        data.message || "(no message)",
+      ].join("\n"),
+    });
+    sendError = error ?? null;
+  } catch (err) {
+    sendError = err;
+  }
+
+  if (sendError) {
+    console.error("[contact] Resend error:", JSON.stringify(sendError));
     return { status: 500, json: { error: "Failed to send email" } };
   }
 

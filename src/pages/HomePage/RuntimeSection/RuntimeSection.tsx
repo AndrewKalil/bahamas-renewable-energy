@@ -10,7 +10,7 @@ export const RuntimeSection = () => (
       <div className={styles.sectionHead}>
         <h2>What actually stays on overnight</h2>
         <p>
-          No vague promises — here is the calculated nighttime runtime for the Pro Advanced
+          No vague promises. Here is the calculated nighttime runtime for the Pro Advanced
           Power System (32 kWh storage) across four real household load profiles.
         </p>
       </div>

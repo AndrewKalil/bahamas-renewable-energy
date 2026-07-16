@@ -14,15 +14,11 @@ export const ContactInfo = () => (
     </div>
     <div className={styles.contactItem}>
       <span className={styles.label}>Email</span>
-      <a href="mailto:info@bahamasres.com">info@bahamasres.com</a>
+      <a href="mailto:info@solar-bahamas.com">info@solar-bahamas.com</a>
     </div>
     <div className={styles.contactItem}>
-      <span className={styles.label}>Mail</span>
-      <span>P.O. Box SS-12345, Freeport, Grand Bahama, The Bahamas</span>
-    </div>
-    <div className={styles.contactItem}>
-      <span className={styles.label}>Web</span>
-      <a href="https://www.bahamasres.com">www.bahamasres.com</a>
+      <span className={styles.label}>Hours</span>
+      <span>Mon to Fri, 9am to 4pm</span>
     </div>
   </div>
 );

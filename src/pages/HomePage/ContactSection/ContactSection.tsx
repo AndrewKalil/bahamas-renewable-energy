@@ -54,7 +54,7 @@ export const ContactSection = () => {
           )}
 
           <form onSubmit={handleSubmit}>
-            {/* Honeypot — hidden from real users; bots that fill it are silently discarded server-side */}
+            {/* Honeypot - hidden from real users; bots that fill it are silently discarded server-side */}
             <div className={styles.honeypot} aria-hidden="true">
               <label htmlFor="company">Company</label>
               <input
@@ -119,7 +119,7 @@ export const ContactSection = () => {
                   value={selectedPkg || undefined}
                   onChange={onChange}
                   options={PACKAGE_SELECT_OPTIONS}
-                  placeholder="Not sure yet — recommend one"
+                  placeholder="Not sure yet, recommend one"
                 />
               </FormControlLabel>
             </div>

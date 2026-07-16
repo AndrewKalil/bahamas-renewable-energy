@@ -38,7 +38,7 @@ export const HeroSection = () => {
               <span className={styles.accent}>when the grid can&rsquo;t.</span>
             </h1>
             <p className={styles.sub}>
-              Premium duty-free solar packages for Bahamian homes and businesses —
+              Premium duty-free solar packages for Bahamian homes and businesses,
               bifacial panels, smart inverters, and lithium storage built for island life.
             </p>
             <div className={styles.ctas}>
@@ -62,9 +62,9 @@ export const HeroSection = () => {
           {/* Hero photo */}
           <div
             className={styles.photoFrame}
-            data-caption="Ground-mount array — residential install, Grand Bahama"
+            data-caption="Ground-mount array, residential install, Grand Bahama"
           >
-            <div className={styles.photo} role="img" aria-label="Ground-mount solar array — residential install, Grand Bahama" />
+            <div className={styles.photo} role="img" aria-label="Ground-mount solar array, residential install, Grand Bahama" />
           </div>
         </div>
       </div>

@@ -28,8 +28,8 @@ export const PackagesSection = () => {
         <div className={styles.sectionHead}>
           <h2>Three systems. One standard of equipment.</h2>
           <p>
-            Every tier uses the same premium components — Trina 725W bifacial panels, EG4
-            smart inverters, BasenGreen lithium storage — scaled to your load. All prices are
+            Every tier uses the same premium components: Trina 725W bifacial panels, EG4
+            smart inverters, BasenGreen lithium storage, scaled to your load. All prices are
             duty-free hardware supply, VAT applied.
           </p>
         </div>
@@ -88,7 +88,7 @@ export const PackagesSection = () => {
 
         <div className={styles.note}>
           <strong>What&rsquo;s included:</strong> these packages cover the supply of core
-          system hardware — solar panels, roof mounts, inverter, battery bank, and disconnect
+          system hardware: solar panels, roof mounts, inverter, battery bank, and disconnect
           switch. On-site installation labor, electrical labor, and localized
           balance-of-system materials are quoted separately after a physical site inspection
           of your property.

@@ -15,9 +15,9 @@ export const PackagesComparisonTable = () => (
       <tbody>
         <tr>
           <th>Solar array</th>
-          <td>12 × 725W — 8.70 kW</td>
-          <td>16 × 725W — 11.60 kW</td>
-          <td>18 × 725W — 13.05 kW</td>
+          <td>12 × 725W (8.70 kW)</td>
+          <td>16 × 725W (11.60 kW)</td>
+          <td>18 × 725W (13.05 kW)</td>
         </tr>
         <tr>
           <th>Inverter output</th>

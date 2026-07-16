@@ -15,18 +15,24 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     req.socket?.remoteAddress ??
     "unknown";
 
-  const result = await handleContactRequest({
-    body: req.body as unknown,
-    ip,
-    env: {
-      RESEND_API_KEY: process.env.RESEND_API_KEY,
-      RESEND_TO_EMAIL: process.env.RESEND_TO_EMAIL,
-    },
-  });
+  try {
+    const result = await handleContactRequest({
+      body: req.body as unknown,
+      ip,
+      env: {
+        RESEND_API_KEY: process.env.RESEND_API_KEY,
+        RESEND_TO_EMAIL: process.env.RESEND_TO_EMAIL,
+        RESEND_FROM_EMAIL: process.env.RESEND_FROM_EMAIL,
+      },
+    });
 
-  if (result.retryAfterSeconds !== undefined) {
-    res.setHeader("Retry-After", String(result.retryAfterSeconds));
+    if (result.retryAfterSeconds !== undefined) {
+      res.setHeader("Retry-After", String(result.retryAfterSeconds));
+    }
+
+    return res.status(result.status).json(result.json);
+  } catch (err) {
+    console.error("[contact] Unhandled error:", err);
+    return res.status(500).json({ error: "Internal server error" });
   }
-
-  return res.status(result.status).json(result.json);
 }

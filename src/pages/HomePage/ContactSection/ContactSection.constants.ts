@@ -9,7 +9,7 @@ export const CONTACT_INITIAL_VALUES: ContactFormValues = {
   island: "",
   package: "",
   message: "",
-  company: "", // honeypot — must remain empty
+  company: "", // honeypot - must remain empty
 };
 
 export const CONTACT_SCHEMA = object({
@@ -32,5 +32,5 @@ export const CONTACT_SCHEMA = object({
     .max(100, "Island / area must be 100 characters or fewer"),
   package: string().max(200, "Package selection is too long"),
   message: string().max(5000, "Message must be 5,000 characters or fewer"),
-  company: string(), // honeypot — no validation, intentionally left open
+  company: string(), // honeypot - no validation, intentionally left open
 });

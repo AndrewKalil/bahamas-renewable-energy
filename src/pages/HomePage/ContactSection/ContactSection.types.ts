@@ -5,7 +5,7 @@ export interface ContactFormValues {
   island: string;
   package: string;
   message: string;
-  /** Honeypot — hidden from users; must remain empty for real submissions. */
+  /** Honeypot - hidden from users; must remain empty for real submissions. */
   company: string;
 }
 

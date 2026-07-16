@@ -1,5 +1,5 @@
 /**
- * BrandMark — placeholder SVG logo for Bahamas Renewable Energy Solutions Ltd.
+ * BrandMark - placeholder SVG logo for Bahamas Renewable Energy Solutions Ltd.
  * Modelled on the business-card mark: gold sun arc, navy solar panel, green leaf arc,
  * teal wave. Replace with the real logo file once provided.
  */
@@ -17,7 +17,7 @@ export const BrandMark = (props: BrandMarkProps) => {
       aria-label="Bahamas Renewable Energy Solutions logo"
       className={className}
     >
-      {/* Gold sun arc — upper right */}
+      {/* Gold sun arc - upper right */}
       <path
         d="M24 4a20 20 0 0 1 18 28"
         stroke="#EFB63A"
@@ -48,7 +48,7 @@ export const BrandMark = (props: BrandMarkProps) => {
       <line x1="21" y1="20" x2="20" y2="30" stroke="#3D93BC" strokeWidth="0.8" />
       <line x1="25" y1="19.5" x2="24" y2="30" stroke="#3D93BC" strokeWidth="0.8" />
       <line x1="29" y1="19" x2="28" y2="29.5" stroke="#3D93BC" strokeWidth="0.8" />
-      {/* Green leaf arc — lower left */}
+      {/* Green leaf arc - lower left */}
       <path
         d="M42 36a20 20 0 0 1-32 4"
         stroke="#5E9C34"

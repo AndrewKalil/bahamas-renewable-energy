@@ -1,5 +1,5 @@
 /* ============================================================
-   Hero — full viewport height, flex column
+   Hero - full viewport height, flex column
    ============================================================ */
 .root {
   display: flex;
@@ -141,7 +141,7 @@
   background: url("/solar-panels-in-yard.png") center / cover no-repeat;
 }
 
-/* ---- Stat band — pinned at bottom of flex container ---- */
+/* ---- Stat band - pinned at bottom of flex container ---- */
 .statBand {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
@@ -181,11 +181,11 @@
 }
 
 /* ============================================================
-   Mobile — navy pattern as full background, glass text panel
+   Mobile - navy pattern as full background, glass text panel
    ============================================================ */
 @media (max-width: 960px) {
   .root {
-    /* Solar panel photo with navy overlay — same image as desktop photo column */
+    /* Solar panel photo with navy overlay - same image as desktop photo column */
     background:
       linear-gradient(rgba(15, 36, 68, 0.62), rgba(15, 36, 68, 0.75)),
       url("/solar-panels-in-yard.png") center / cover no-repeat;
@@ -226,7 +226,7 @@
     @apply px-5 py-6;
   }
 
-  /* Hide the photo column — the background replaces it */
+  /* Hide the photo column - the background replaces it */
   .photoFrame {
     display: none;
   }

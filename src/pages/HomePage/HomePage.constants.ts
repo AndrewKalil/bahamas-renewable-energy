@@ -44,12 +44,12 @@ export const WHY_CARDS: WhyCard[] = [
   {
     id: "storm",
     title: "Storm-season autonomy",
-    body: "Lithium banks sized for real runtimes — up to 48 hours of essential loads on battery alone — with waterproof-rated wall-mount batteries and surge-protected DC disconnects.",
+    body: "Lithium banks sized for real runtimes: up to 48 hours of essential loads on battery alone, with waterproof-rated wall-mount batteries and surge-protected DC disconnects.",
   },
   {
     id: "duty",
     title: "Duty-free hardware",
-    body: "Solar equipment enters The Bahamas duty-free — only VAT applies. We optimize every package around that exemption so more of your investment goes into capacity, not customs.",
+    body: "Solar equipment enters The Bahamas duty-free; only VAT applies. We optimize every package around that exemption so more of your investment goes into capacity, not customs.",
   },
 ];
 
@@ -77,7 +77,7 @@ export interface Package {
 export const PACKAGES: Package[] = [
   {
     id: "essential",
-    optionLabel: "Essential Eco-Power Resilience — BSD 11,354",
+    optionLabel: "Essential Eco-Power Resilience (BSD 11,354)",
     tier: "Tier I",
     name: "Essential Eco-Power Resilience",
     fit: "Apartments, small homes & essential-load backup",
@@ -97,7 +97,7 @@ export const PACKAGES: Package[] = [
   },
   {
     id: "pro",
-    optionLabel: "Pro Advanced Power System — BSD 16,172",
+    optionLabel: "Pro Advanced Power System (BSD 16,172)",
     tier: "Tier II",
     name: "Pro Advanced Power System",
     fit: "Full-size family homes running AC & laundry",
@@ -117,7 +117,7 @@ export const PACKAGES: Package[] = [
   },
   {
     id: "elite",
-    optionLabel: "Elite Stacked High-Capacity Micro-Grid — BSD 24,356",
+    optionLabel: "Elite Stacked High-Capacity Micro-Grid (BSD 24,356)",
     tier: "Tier III",
     name: "Elite Stacked High-Capacity Micro-Grid",
     fit: "Large villas, commercial & hospitality properties",
@@ -138,7 +138,7 @@ export const PACKAGES: Package[] = [
 ];
 
 export const PACKAGE_SELECT_OPTIONS = [
-  { label: "Not sure yet — recommend one", value: "" },
+  { label: "Not sure yet, recommend one", value: "" },
   ...PACKAGES.map((pkg) => ({ label: pkg.optionLabel, value: pkg.optionLabel })),
 ];
 
@@ -164,7 +164,7 @@ export const EQUIPMENT: Equipment[] = [
     brand: "Trina Solar · Vertex N",
     title: "725W N-Type i-TOPCon Bifacial Panels",
     description:
-      "Dual-glass monocrystalline modules that harvest from both faces — up to 10–20% additional yield from reflected light. Low temperature coefficient keeps output high in Bahamian heat, and the dual-glass build carries a 30-year power guarantee.",
+      "Dual-glass monocrystalline modules that harvest from both faces, up to 10-20% additional yield from reflected light. Low temperature coefficient keeps output high in Bahamian heat, and the dual-glass build carries a 30-year power guarantee.",
     specs: [
       { value: "725 W", key: "Max power output" },
       { value: "23.3%", key: "Module efficiency" },
@@ -179,7 +179,7 @@ export const EQUIPMENT: Equipment[] = [
     brand: "EG4 Electronics · 12000XP",
     title: "15kW Split-Phase Off-Grid Inverter",
     description:
-      "All-in-one 48V inverter/charger that runs fully off-grid or alongside grid and generator input. Dual MPPTs accept up to 480 VDC, switching to battery takes under 10 ms, and units stack up to 16 in parallel — the same platform grows from a starter home to a commercial micro-grid.",
+      "All-in-one 48V inverter/charger that runs fully off-grid or alongside grid and generator input. Dual MPPTs accept up to 480 VDC, switching to battery takes under 10 ms, and units stack up to 16 in parallel; the same platform grows from a starter home to a commercial micro-grid.",
     specs: [
       { value: "15 kW", key: "Continuous output @ 240V" },
       { value: "24 kW", key: "Max utilized PV input" },
@@ -194,7 +194,7 @@ export const EQUIPMENT: Equipment[] = [
     brand: "BasenGreen · BR-OW-LV Series",
     title: "16kWh Wall-Mount LiFePO4 Battery",
     description:
-      "Lithium iron phosphate — the most stable and safest lithium chemistry — in a waterproof wall-mount enclosure with LCD touch screen, built-in circuit breaker, and app-based remote monitoring. Rated for 8,000+ charge cycles and expandable up to 16 units in parallel.",
+      "Lithium iron phosphate, the most stable and safest lithium chemistry, in a waterproof wall-mount enclosure with LCD touch screen, built-in circuit breaker, and app-based remote monitoring. Rated for 8,000+ charge cycles and expandable up to 16 units in parallel.",
     specs: [
       { value: "16 kWh", key: "Energy per unit (51.2V · 314Ah)" },
       { value: "≥8,000", key: "Cycle life @ 25°C" },
@@ -262,7 +262,7 @@ export const PROCESS_STEPS: ProcessStep[] = [
   {
     id: "choose",
     title: "Choose your package",
-    body: "Match your property and loads to a tier — or send us a recent electricity bill and we'll recommend one.",
+    body: "Match your property and loads to a tier, or send us a recent electricity bill and we'll recommend one.",
     tag: "Free consultation",
   },
   {
@@ -280,7 +280,7 @@ export const PROCESS_STEPS: ProcessStep[] = [
   {
     id: "install",
     title: "Install & commission",
-    body: "Mounting, wiring, battery configuration and app setup — then we hand over a monitored, running system.",
+    body: "Mounting, wiring, battery configuration and app setup, then we hand over a monitored, running system.",
     tag: "App monitoring included",
   },
 ];
@@ -299,11 +299,11 @@ export const FAQ_ITEMS: FaqItem[] = [
     id: "duty-free",
     question: "Is solar equipment really duty-free in The Bahamas?",
     answer:
-      "Yes. Renewable energy hardware imports are duty-exempt; only VAT applies. Our published package prices reflect the full duty-free hardware cost with Bahamas VAT applied — the figure you see is the figure you pay for equipment.",
+      "Yes. Renewable energy hardware imports are duty-exempt; only VAT applies. Our published package prices reflect the full duty-free hardware cost with Bahamas VAT applied; the figure you see is the figure you pay for equipment.",
   },
   {
     id: "whats-included",
-    question: "What's included in the package price — and what isn't?",
+    question: "What's included in the package price, and what isn't?",
     answer:
       "The package covers core system hardware: solar panels, roof mounts, inverter(s), battery bank, and DC disconnect switch. Installation labor, electrical labor, and site-specific balance-of-system materials are quoted separately after a physical site inspection, because every property is different.",
   },
@@ -311,30 +311,30 @@ export const FAQ_ITEMS: FaqItem[] = [
     id: "ac",
     question: "Will the system run my air conditioning?",
     answer:
-      "Yes — every tier is sized to run at least one high-efficiency mini-split AC alongside normal household loads. The Pro system runs a 12k BTU mini-split for roughly 11.6 hours overnight on battery; the Elite micro-grid supports central AC and multiple climate zones.",
+      "Yes, every tier is sized to run at least one high-efficiency mini-split AC alongside normal household loads. The Pro system runs a 12k BTU mini-split for roughly 11.6 hours overnight on battery; the Elite micro-grid supports central AC and multiple climate zones.",
   },
   {
     id: "hurricane",
     question: "What happens during a hurricane or extended outage?",
     answer:
-      "The inverter switches to battery in under 10 milliseconds — faster than most electronics can notice. Essential loads run for 25 to 48+ hours on battery alone depending on your package, and the panels recharge the bank whenever there's daylight. The EG4 inverter also accepts generator input as a third power source.",
+      "The inverter switches to battery in under 10 milliseconds, faster than most electronics can notice. Essential loads run for 25 to 48+ hours on battery alone depending on your package, and the panels recharge the bank whenever there's daylight. The EG4 inverter also accepts generator input as a third power source.",
   },
   {
     id: "expand",
     question: "Can I expand the system later?",
     answer:
-      "That's the core of the platform. Inverters parallel up to 16 units (240 kW) and batteries stack up to 16 in parallel — you can start with the Essential package and grow toward a full micro-grid without replacing anything you've already bought.",
+      "That's the core of the platform. Inverters parallel up to 16 units (240 kW) and batteries stack up to 16 in parallel; you can start with the Essential package and grow toward a full micro-grid without replacing anything you've already bought.",
   },
   {
     id: "warranties",
     question: "What warranties back the equipment?",
     answer:
-      "Panels: 30-year power warranty (87.4% output guaranteed at year 30) and 12-year product workmanship warranty. Inverters: 5-year standard warranty. Batteries: rated at 8,000+ charge cycles — roughly two decades of daily use.",
+      "Panels: 30-year power warranty (87.4% output guaranteed at year 30) and 12-year product workmanship warranty. Inverters: 5-year standard warranty. Batteries: rated at 8,000+ charge cycles, roughly two decades of daily use.",
   },
   {
     id: "monitoring",
     question: "How do I monitor my system?",
     answer:
-      "Both the inverter and batteries include app-based monitoring over Wi-Fi and Bluetooth — live production, consumption, and state of charge from your phone, plus remote diagnostics so issues can often be resolved without a site visit.",
+      "Both the inverter and batteries include app-based monitoring over Wi-Fi and Bluetooth: live production, consumption, and state of charge from your phone, plus remote diagnostics so issues can often be resolved without a site visit.",
   },
 ];

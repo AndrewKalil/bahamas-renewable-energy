@@ -3,7 +3,7 @@ import type { ReactElement } from "react";
 import { SectionId, WHY_CARDS } from "../HomePage.constants";
 import styles from "./WhySection.module.scss";
 
-/* Inline SVG icons — per spec: no emoji, lucide only for UI chrome; these are brand illustrations */
+/* Inline SVG icons - per spec: no emoji, lucide only for UI chrome; these are brand illustrations */
 const WHY_ICONS: Record<string, ReactElement> = {
   outage: (
     <svg className={styles.icon} viewBox="0 0 44 44" fill="none" aria-hidden="true">

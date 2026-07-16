@@ -8,7 +8,7 @@ import type { ContactFormValues, SubmitStatus } from "./ContactSection.types";
 
 export const useContactForm = (selectedPackage: string) => {
   const [submitStatus, setSubmitStatus] = useState<SubmitStatus>("idle");
-  // Capture when the form was first rendered — used for bot-timing detection
+  // Capture when the form was first rendered - used for bot-timing detection
   const renderedAtRef = useRef(Date.now());
 
   const onSubmitHandler = useCallback(
