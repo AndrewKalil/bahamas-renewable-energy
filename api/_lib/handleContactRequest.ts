@@ -54,7 +54,8 @@ export async function handleContactRequest(
     }
   }
   if (elapsedMs < MIN_SUBMIT_MS) {
-    // Silent success — never tip off bots that a honeypot fired
+    // Silent success — never tip off bots that a check fired
+    console.warn("[contact] discarded: sub-threshold timing", { elapsedMs });
     return { status: 200, json: { success: true } };
   }
 
@@ -62,7 +63,8 @@ export async function handleContactRequest(
   const validation = validateContact(body);
 
   if ("bot" in validation) {
-    // Honeypot triggered — silent success
+    // Honeypot triggered — silent success (never tip off bots)
+    console.warn("[contact] discarded: honeypot filled");
     return { status: 200, json: { success: true } };
   }
 
