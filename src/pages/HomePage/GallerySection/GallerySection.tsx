@@ -1,47 +1,63 @@
+import { Play } from "lucide-react";
+
 import { SectionId } from "../HomePage.constants";
+import { GalleryLightbox } from "./GalleryLightbox";
+import { GALLERY_MEDIA } from "./GallerySection.constants";
+import { useGalleryLightbox } from "./GallerySection.hooks";
 import styles from "./GallerySection.module.scss";
 
-export const GallerySection = () => (
-  <section id={SectionId.Work} className={styles.root}>
-    <div className={styles.wrap}>
-      <div className={styles.kicker}>Recent Installations</div>
-      <div className={styles.sectionHead}>
-        <h2>Work we&rsquo;re proud to sign</h2>
-      </div>
-      <div className={styles.gallery}>
-        <div
-          className={styles.photoFrame}
-          data-caption="16-panel ground-mount array, Freeport, Grand Bahama"
-        >
-          <img
-            src="/solar-panels-in-yard.png"
-            alt="16-panel ground-mount solar array, Freeport, Grand Bahama"
-            className={styles.photo}
-          />
+export const GallerySection = () => {
+  const { activeIndex, isOpen, onOpenHandler, onCloseHandler, onPrevHandler, onNextHandler } =
+    useGalleryLightbox(GALLERY_MEDIA.length);
+
+  return (
+    <section id={SectionId.Work} className={styles.root}>
+      <div className={styles.wrap}>
+        <div className={styles.kicker}>Recent Installations</div>
+        <div className={styles.sectionHead}>
+          <h2>Work we&rsquo;re proud to sign</h2>
         </div>
 
-        <div
-          className={styles.photoFrame}
-          data-caption="Galvanized rail matrix during installation"
-        >
-          <img
-            src="/rail-matrix-installation.jpeg"
-            alt="Galvanized rail matrix during solar panel installation"
-            className={styles.photo}
-          />
+        <div className={styles.gallery}>
+          {GALLERY_MEDIA.map((item, index) => (
+            <button
+              key={item.src}
+              className={styles.photoFrame}
+              data-caption={item.caption}
+              onClick={onOpenHandler(index)}
+              aria-label={`Open ${item.type === "video" ? "video" : "photo"}: ${item.caption}`}
+            >
+              {item.type === "video" ? (
+                <>
+                  <video
+                    className={styles.photo}
+                    src={item.src}
+                    poster={item.poster}
+                    preload="metadata"
+                    muted
+                    playsInline
+                  />
+                  <div className={styles.playOverlay} aria-hidden="true">
+                    <Play size={36} />
+                  </div>
+                </>
+              ) : (
+                <img className={styles.photo} src={item.src} alt={item.alt} />
+              )}
+            </button>
+          ))}
         </div>
 
-        <div
-          className={styles.photoFrame}
-          data-caption="Twin EG4 inverters + BasenGreen battery bank, power shed"
-        >
-          <img
-            src="/battery-and-inverters-system.jpeg"
-            alt="Twin EG4 inverters and BasenGreen battery bank in the power shed"
-            className={styles.photo}
+        {isOpen && activeIndex !== null && (
+          <GalleryLightbox
+            media={GALLERY_MEDIA}
+            index={activeIndex}
+            onClose={onCloseHandler}
+            onPrev={onPrevHandler}
+            onNext={onNextHandler}
           />
-        </div>
+        )}
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
